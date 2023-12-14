@@ -17,7 +17,7 @@ export default function Header() {
     });
 
     useEffect(() => {
-        fetch('http://localhost:3001/user/profile', {
+        fetch('https://openapi-ncb5.onrender.com/user/profile', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -35,7 +35,7 @@ export default function Header() {
 
 
     const handleDeleteAccount = () => {
-        fetch('http://localhost:3001/user/deleteAccount', {
+        fetch('https://openapi-ncb5.onrender.com/user/deleteAccount', {
             method: 'DELETE',
 
             headers: {
