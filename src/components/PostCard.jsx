@@ -25,7 +25,7 @@ export default function PostCard({
 
   const handleLike = () => {
 
-    fetch(`http://localhost:3001/post/like/`, {
+    fetch(`https://openapi-ncb5.onrender.com/post/like/`, {
       method: 'PUT',
       credentials: 'include',
       body: JSON.stringify({
@@ -55,7 +55,7 @@ export default function PostCard({
 
   const handleDeletePost = () => {
 
-    fetch(`http://localhost:3001/post/posts/${postId}`, {
+    fetch(`https://openapi-ncb5.onrender.com/post/posts/${postId}`, {
       method: 'DELETE',
       credentials: 'include',
       headers: {

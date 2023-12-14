@@ -16,7 +16,7 @@ export default function LoginForm() {
             email: email.value,
             password: password.value
         }
-        fetch('http://localhost:3001/auth/authenticate', {
+        fetch('https://openapi-ncb5.onrender.com/auth/authenticate', {
             method: 'POST',
             headers: {
                

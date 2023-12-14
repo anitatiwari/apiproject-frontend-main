@@ -15,7 +15,7 @@ export default function UsersPost() {
     const [user, setUser] = React.useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:3001/user/posts/${userId}`)
+        fetch(`https://openapi-ncb5.onrender.com/user/posts/${userId}`)
             .then((response) => response.json())
             .then((data) => {
                 const formattedPost = data.map((postData) => {
@@ -37,7 +37,7 @@ export default function UsersPost() {
     }, []);
 
     useEffect(() => {
-        fetch(`http://localhost:3001/user/profile/${userId}`)
+        fetch(`https://openapi-ncb5.onrender.com/user/profile/${userId}`)
             .then((response) => response.json())
             .then((data) => {
 

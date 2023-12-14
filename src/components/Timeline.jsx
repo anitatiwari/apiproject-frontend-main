@@ -7,7 +7,7 @@ export default function Timeline() {
 
 
     useEffect(() => {
-        fetch('http://localhost:3001/post/getAllPosts')
+        fetch('https://openapi-ncb5.onrender.com/post/getAllPosts')
             .then(response => response.json())
             .then(data => {
                 const postFormattedData = data.map((postData) => {
