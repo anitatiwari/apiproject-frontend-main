@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import Users from './Users'
 import PostCard from './PostCard'
 import { useParams } from "react-router-dom";
+import Header from './Header';
 
 import { useNavigate } from 'react-router-dom';
 
@@ -15,7 +16,7 @@ export default function UsersPost() {
     const [user, setUser] = React.useState([]);
 
     useEffect(() => {
-        fetch(`https://openapi-ncb5.onrender.com/user/posts/${userId}`)
+        fetch(`http://localhost:3001/user/posts/${userId}`)
             .then((response) => response.json())
             .then((data) => {
                 const formattedPost = data.map((postData) => {
@@ -37,7 +38,7 @@ export default function UsersPost() {
     }, []);
 
     useEffect(() => {
-        fetch(`https://openapi-ncb5.onrender.com/user/profile/${userId}`)
+        fetch(`http://localhost:3001/user/profile/${userId}`)
             .then((response) => response.json())
             .then((data) => {
 
@@ -53,17 +54,18 @@ export default function UsersPost() {
 
 
     return (
-        <div className='p-2 '>
-            <div className='flex justify-around flex-row-reverse'>
+        <div>
+            <Header/>
+            <div className='flex justify-between pt-2 pr-4 flex-row-reverse'>
                 
           
 
-<div className='p-12'>
+<div className='pt-4'>
     
 
 <button onClick={()=>{
                     navigate('/dashboard')
-                }}  className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full mt-2'>
+                }}  className='bg-indigo-700 hover:bg-rose-700 text-white font-bold py-2 px-4 rounded w-full mt-2'>
                     Go to Dashboard
                 </button>
                 </div>

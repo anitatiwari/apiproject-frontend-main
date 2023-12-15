@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react'
 import PostCard from './PostCard';
 
 
+
 export default function Timeline() {
     const [allPosts, setAllPosts] = React.useState([]);
 
 
     useEffect(() => {
-        fetch('https://openapi-ncb5.onrender.com/post/getAllPosts')
+        fetch('http://localhost:3001/post/getAllPosts')
             .then(response => response.json())
             .then(data => {
                 const postFormattedData = data.map((postData) => {
@@ -37,8 +38,13 @@ export default function Timeline() {
 
 
     return (
+        
         <div className='flex flex-col items-center justify-center p-5'>
-            <h1 className='text-2xl font-bold mb-5'>Timeline</h1>
+            <div className='p-12'>
+                
+          
+            <h1 className='text-2xl font-bold mb-5 text-blue-800'>PostQuilt Timeline</h1>
+            </div>
             <div className='flex justify-center items-center mb-5'>
                 <div className='w-full grid grid-cols-3 gap-1'>
 

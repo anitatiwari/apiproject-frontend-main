@@ -16,7 +16,7 @@ export default function Dashboard() {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    fetch('https://openapi-ncb5.onrender.com/user/listUsers', {
+    fetch('http://localhost:3001/user/listUsers', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -35,7 +35,7 @@ export default function Dashboard() {
 
 
   useEffect(() => {
-    fetch('https://openapi-ncb5.onrender.com/post/posts', {
+    fetch('http://localhost:3001/post/posts', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -81,7 +81,7 @@ export default function Dashboard() {
 
 
 
-        <div className='flex justify-around items-center w-full'>
+        <div className='flex justify-around w-full'>
 
           <div className='px-10 py-10 p-2'>
             <div className='flex'>

@@ -17,7 +17,7 @@ export default function Header() {
     });
 
     useEffect(() => {
-        fetch('https://openapi-ncb5.onrender.com/user/profile', {
+        fetch('http://localhost:3001/user/profile', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -35,7 +35,7 @@ export default function Header() {
 
 
     const handleDeleteAccount = () => {
-        fetch('https://openapi-ncb5.onrender.com/user/deleteAccount', {
+        fetch('http://localhost:3001/user/deleteAccount', {
             method: 'DELETE',
 
             headers: {
@@ -59,10 +59,10 @@ export default function Header() {
 
     return (
         <header className="flex items-center justify-between p-4 bg-blue-500 text-white">
-            <div className="flex items-center gap-3">
-                <span className="relative flex shrink-0 overflow-hidden rounded-full h-9 w-9">
+            <div className="flex items-center gap-12">
+                <span className="relative flex shrink-0 pl-12 rounded-full h-9 w-9">
                     <span className="flex h-full w-full items-center justify-center rounded-full bg-muted">
-                        UN
+                    PostQuilt
                     </span>
                 </span>
                 <div className="grid gap-0.5 text-xs">
