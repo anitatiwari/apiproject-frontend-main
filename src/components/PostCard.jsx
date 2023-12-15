@@ -15,6 +15,7 @@ export default function PostCard({
   title,
   content,
   numberOfLikes,
+  setNumberOfLikes,
   isAuthor = false,
 }) {
   const [editModalOpen, setEditModalOpen] = React.useState(false);
@@ -34,6 +35,8 @@ export default function PostCard({
       .then((response) => {
         if (response.ok) {
           toast.success("Post liked successfully");
+          setNumberOfLikes((prevLikes) => prevLikes + 1);
+
         } else {
           if (response.status === 401) {
             toast.error("You need to be logged in to like a post");

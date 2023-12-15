@@ -65,6 +65,9 @@ export default function Header() {
                     PostQuilt
                     </span>
                 </span>
+                <div class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-200 overflow-hidden">
+                <img class="w-full h-full object-cover" src={`https://ui-avatars.com/api/?name=${userData.firstname}+${userData.lastname}`} alt="User Profile" />
+            </div>
                 <div className="grid gap-0.5 text-xs">
                     <div className="font-medium">{userData.firstname + " " + userData.lastname}</div>
                     <div className="text-gray-200">{userData.email}</div>
