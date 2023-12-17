@@ -21,7 +21,7 @@ export default function PostCard({
   const [editModalOpen, setEditModalOpen] = React.useState(false);
 
   const handleLike = () => {
-    fetch(`http://localhost:3001/post/like/`, {
+    fetch(`https://openapi-ncb5.onrender.com/post/like/`, {
       method: "PUT",
       credentials: "include",
       body: JSON.stringify({

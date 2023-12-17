@@ -30,7 +30,7 @@ export default function EditPostModal({
         }
 
 
-        fetch('http://localhost:3001/post/posts/'+postId, {
+        fetch('https://openapi-ncb5.onrender.com/post/posts/'+postId, {
             method: 'PUT',
             credentials: 'include',
             headers: { "Content-Type": "application/json" },

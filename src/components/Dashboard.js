@@ -16,7 +16,7 @@ export default function Dashboard() {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3001/user/listUsers', {
+    fetch('https://openapi-ncb5.onrender.com/user/listUsers', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -35,7 +35,7 @@ export default function Dashboard() {
 
 
   useEffect(() => {
-    fetch('http://localhost:3001/post/posts', {
+    fetch('https://openapi-ncb5.onrender.com/post/posts', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
