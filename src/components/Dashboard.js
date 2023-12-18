@@ -35,7 +35,7 @@ export default function Dashboard() {
 
 
   useEffect(() => {
-    fetch('https://openapi-ncb5.onrender.com/post/posts', {
+    fetch('http://localhost:3001/post/posts', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',

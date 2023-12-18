@@ -16,7 +16,7 @@ export default function UsersPost() {
     const [user, setUser] = React.useState([]);
 
     useEffect(() => {
-        fetch(`https://openapi-ncb5.onrender.com/user/posts/${userId}`)
+        fetch(`http://localhost:3001/user/posts/${userId}`)
             .then((response) => response.json())
             .then((data) => {
                 const formattedPost = data.map((postData) => {

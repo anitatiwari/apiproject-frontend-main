@@ -17,7 +17,7 @@ export default function Header() {
     });
 
     useEffect(() => {
-        fetch('https://openapi-ncb5.onrender.com/user/profile', {
+        fetch('http://localhost:3001/user/profile', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',

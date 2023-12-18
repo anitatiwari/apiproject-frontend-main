@@ -13,7 +13,7 @@ export default function RegisterForm() {
             lastname: lastName.value
 
         }
-        fetch('https://openapi-ncb5.onrender.com/user/signup', {
+        fetch('http://localhost:3001/user/signup', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
