@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useState } from 'react'
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 export default function Header() {
 
     const navigate = useNavigate();
@@ -60,17 +61,22 @@ export default function Header() {
     return (
         <header className="flex items-center justify-between p-4 bg-blue-500 text-white">
             <div className="flex items-center gap-12">
-                <span className="relative flex shrink-0 pl-12 rounded-full h-9 w-9">
-                    <span className="flex h-full w-full items-center justify-center rounded-full bg-muted">
-                    PostQuilt
+                <span className=" flex  pl-12 rounded-full ">
+                    <span className="flex h-full w-full items-center justify-center rounded-full bg-muted text-2xl font-bold  text-white">
+                    <Link to="/" className='text-s font-bold  '> FeedFrenzy </Link>
+
                     </span>
                 </span>
+                <div className='flex  gap-2'>
+                    
+                
                 <div class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-200 overflow-hidden">
                 <img class="w-full h-full object-cover" src={`https://ui-avatars.com/api/?name=${userData.firstname}+${userData.lastname}`} alt="User Profile" />
             </div>
-                <div className="grid gap-0.5 text-xs">
+                <div className="grid text-xs">
                     <div className="font-medium">{userData.firstname + " " + userData.lastname}</div>
                     <div className="text-gray-200">{userData.email}</div>
+                </div>
                 </div>
             </div>
             <div className="flex items-center gap-4">

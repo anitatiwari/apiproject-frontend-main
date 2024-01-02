@@ -35,43 +35,52 @@ export default function RegisterForm() {
     }
 
     return (
-        <form onSubmit={handleSubmit} className="rounded-lg border bg-card text-card-foreground shadow-sm max-w-md mx-auto mt-10" data-v0-t="card">
+        <div className='flex justify-end'>
+        <div className='1/3 pl-12 self-center'>
+          <h1 className='text-5xl md:text-9xl r font-bold text-violet-800'>FeedFrenzy</h1>  
+        </div>
+        <div className='w-2/3'>
+            
+       
+        <form onSubmit={handleSubmit} className="rounded-lg border bg-zinc-800 text-white shadow-sm max-w-md mx-auto mt-10" data-v0-t="card">
             <div className="flex flex-col space-y-1.5 p-6">
                 <h3 className="font-semibold tracking-tight text-3xl text-center">Register</h3>
                 <p className="text-muted-foreground text-lg text-center">Please enter your credentials to login.</p>
             </div>
-            <div className="p-6 space-y-4">\
+            <div className="p-6 space-y-4">
                 <div className="space-y-2">
                     <label className="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-lg" htmlFor="email">
                         FirstName
                     </label>
-                    <input type="text" className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" id="firstName" placeholder="john" required />
+                    <input type="text" className="text-black flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" id="firstName" placeholder="john" required />
                 </div>
                 <div className="space-y-2">
                     <label className="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-lg" htmlFor="email">
                         LastName
                     </label>
-                    <input type="text" className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" id="lastName" placeholder="doe" required />
+                    <input type="text" className="text-black flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" id="lastName" placeholder="doe" required />
                 </div>
                 <div className="space-y-2">
                     <label className="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-lg" htmlFor="email">
                         Email Address
                     </label>
-                    <input type="email" className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" id="email" placeholder="email@example.com" required />
+                    <input type="email" className="text-black flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" id="email" placeholder="email@example.com" required />
                 </div>
                 <div className="space-y-2">
                     <label className="font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-lg" htmlFor="password">
                         Password
                     </label>
-                    <input type="password" className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" id="password" required />
+                    <input type="password" className="text-black flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" id="password" required />
                 </div>
             </div>
             <div className="flex items-center p-6">
-                <button type="submit" className="inline-flex items-center justify-center rounded-md font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 w-full py-2 text-lg">
+                <button type="submit" className="border border-2 hover:bg-zinc-500 inline-flex items-center justify-center rounded-md font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 w-full py-2 text-lg">
                     Create Account
                 </button>
             </div>
         </form>
+        </div>
+        </div>
 
     )
 }

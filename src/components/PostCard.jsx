@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from 'react'
 import ReactTimeAgo from "react-time-ago";
 import TimeAgo from "javascript-time-ago";
 import EditPostModal from "./EditPostModal";
@@ -14,13 +14,15 @@ export default function PostCard({
   createdAt,
   title,
   content,
-  numberOfLikes,
-  setNumberOfLikes,
   isAuthor = false,
 }) {
   const [editModalOpen, setEditModalOpen] = React.useState(false);
+  const [numberOfLikes, setNumberOfLikes] = React.useState(0);
+
+
 
   const handleLike = () => {
+ 
     fetch(`http://localhost:3001/post/like/`, {
       method: "PUT",
       credentials: "include",
@@ -34,8 +36,12 @@ export default function PostCard({
     })
       .then((response) => {
         if (response.ok) {
+          console.log('Response:', response);
+
           toast.success("Post liked successfully");
           setNumberOfLikes((prevLikes) => prevLikes + 1);
+
+          
 
         } else {
           if (response.status === 401) {
@@ -48,6 +54,8 @@ export default function PostCard({
           toast.error("Something went wrong");
         }
       );
+ 
+
   };
 
   const handleDeletePost = () => {
@@ -66,6 +74,7 @@ export default function PostCard({
       .catch((error) => {
         toast.error("Something went wrong");
       });
+      window.location.reload();
   };
 
   return (
@@ -146,7 +155,7 @@ export default function PostCard({
             {isAuthor ? (
               <button
                 onClick={() => setEditModalOpen(true)}
-                class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded inline-flex items-center ml-2"
+                class="bg-slate-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded inline-flex items-center ml-2"
               >
                 <svg
                   class="w-4 h-4 mr-2"

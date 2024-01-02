@@ -7,6 +7,8 @@ import { useNavigate } from 'react-router-dom';
 
 export default function Dashboard() {
 
+
+
   const navigate = useNavigate();
 
 
@@ -16,7 +18,7 @@ export default function Dashboard() {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    fetch('https://openapi-ncb5.onrender.com/user/listUsers', {
+    fetch('http://localhost:3001/user/listUsers', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -81,9 +83,9 @@ export default function Dashboard() {
 
 
 
-        <div className='flex justify-around w-full'>
+        <div className='flex justify-end'>
 
-          <div className='px-10 py-10 p-2'>
+          <div className='w-2/3 px-10 py-10 p-2'>
             <div className='flex'>
               <h2 className='text-2xl mb-2 font-bold'>Posts</h2>
               <div className='ml-auto'>
@@ -110,23 +112,27 @@ export default function Dashboard() {
 
                 content={post.content}
 
-                numberOfLikes={0}
+                numberOfLikes={post.numberOfLikes}
+
+                setNumberOfLikes={post.setNumberOfLikes}
+            
 
                 
               />
             })}
           </div>
 
-          <div className='px-10 py-50 p-2'>
-            {users.map((user) => {
-              return <Users key={user.id}
-                firstName={user.firstname}
-                lastName={user.lastname}
-                email={user.email}
-                id={user.id}
-              />
-            })}
-          </div>
+          <div className='w-1/3 p-2 users-container' style={{ overflowY: 'auto', maxHeight: 'calc(100vh - 150px)' }}>
+  {users.map((user) => {
+    return <Users key={user.id}
+      firstName={user.firstname}
+      lastName={user.lastname}
+      email={user.email}
+      id={user.id}
+    />
+  })}
+</div>
+
 
         </div>
 

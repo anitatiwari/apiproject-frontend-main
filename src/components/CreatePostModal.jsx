@@ -22,7 +22,7 @@ export default function CreatePostModal() {
             content: description
         }
 
-        fetch('https://openapi-ncb5.onrender.com/post/posts', {
+        fetch('http://localhost:3001/post/posts', {
             method: 'POST',
             credentials: 'include',
             headers: { "Content-Type": "application/json" },
@@ -47,6 +47,7 @@ export default function CreatePostModal() {
 
 
         closeModal()
+        window.location.reload();
 
     }
 

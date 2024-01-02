@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import PostCard from './PostCard';
+import { Link } from 'react-router-dom';
 
 
 
@@ -39,13 +40,26 @@ export default function Timeline() {
 
     return (
         
-        <div className='flex flex-col items-center justify-center p-5'>
-            <div className='p-12'>
+        <div className='bg-violet-500' >
+            <div className=' flex justify-around items-center p-12 w-full h-96'>
+                
+           
+            <div className='text-center'>
                 
           
-            <h1 className='text-2xl font-bold mb-5 text-blue-800'>PostQuilt Timeline</h1>
+            <h1 className='text-6xl font-bold  text-white'>FeedFrenzy Timeline</h1>
+
             </div>
-            <div className='flex justify-center items-center mb-5'>
+            <div className='flex justify-around items-center justify-end p-4 gap-2'>
+                
+            <Link to="/register" className='text-xl border-2 rounded-md text-white hover:text-rose-300 px-4'> Register </Link> 
+
+           
+            <Link to="/login" className='text-xl border-2 rounded-md text-white  hover:text-rose-300 px-4 '> Login </Link>
+             
+                </div>
+                </div>
+            <div className='flex justify-center flex-col items-center  justify-center items-center mb-5 p-4'>
                 <div className='w-full grid grid-cols-3 gap-1'>
 
                     {allPosts.map((post) => {

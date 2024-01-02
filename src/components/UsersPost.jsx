@@ -84,26 +84,23 @@ export default function UsersPost() {
                         <h2 className='text-2xl mb-2 font-bold'>Posts by User</h2>
 
                     </div>
-
-                    {userPosts.map((post) => {
-                        return <PostCard key={post.postId}
-
-                            postId={post.postId}
-
-
-                            firstName={post.userFirstName}
-
-                            createdAt={post.createdAt}
-
-                            lastName={post.userLastName}
-
-                            title={post.title}
-
-                            content={post.content}
-
-                            numberOfLikes={0}
-                        />
-                    })}
+                    {userPosts.length === 0 ? (
+            <div className='text-gray-500 text-4xl '>
+               <p> User has no posts.</p></div>
+          ) : (
+            userPosts.map((post) => (
+              <PostCard
+                key={post.postId}
+                postId={post.postId}
+                firstName={post.userFirstName}
+                createdAt={post.createdAt}
+                lastName={post.userLastName}
+                title={post.title}
+                content={post.content}
+                numberOfLikes={0}
+              />
+            ))
+          )}
                 </div>
 
 
